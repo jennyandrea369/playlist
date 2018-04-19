@@ -17,10 +17,11 @@
 
 // Songs
 var mySong = {
-	"title":"24K Magic",
-	"artist":"Bruno Mars",
-	"mp3-url":"https://open.spotify.com/track/6b8Be6ljOzmkOmFslEb23P",
-	"image-url":"https://images-na.ssl-images-amazon.com/images/I/71Gr9aCHQfL._SY355_.jpg",
+	"title":"Billy",
+	"artist":"6IX9INE",
+	"mp3-url":"https://www.youtube.com/embed/LJjsm6CVsG8",
+	"songLength": "2:08"
+	
 }
 
 var myPlayList = [
@@ -34,25 +35,33 @@ var myPlayList = [
 		"title":"Sir Duke",
 		"artist":"Stevie Wonder",
 		"mp3-url":"https://open.spotify.com/track/2udw7RDkldLFIPG9WYdVtT",
-		"image-url":"https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/Songs_in_the_key_of_life.jpg/220px-Songs_in_the_key_of_life.jpg",
+
 	},
 	{
 		"title":"Sorry",
 		"artist":"Justin Bieber",
 		"mp3-url":"https://open.spotify.com/track/09CtPGIpYB4BrO8qb1RGsF",
-		"image-url":"http://assets-s3.usmagazine.com/uploads/assets/articles/93827-justin-biebers-sorry-choreographer-spills-video-style-secrets-parris-goebel/1445638548_justin-bieber-sorry-dancers-zoom.jpg",
 	}
 
 ]
 
-
+function paragraph(text) {return "<p>" + text + "</p>" }
 
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
-  
+  $('.songs').append(paragraph(mySong.title));
+$('.songs').append(paragraph(mySong.artist));
+$('.songs').append('mp3-url:<iframe width="560" height="315" src="'+ mySong["mp3-url"] + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
 
-
-
+for(var i =0; i< myPlayList.length; i++){
+    var song = myPlayList[i];
+    $('.songs').append(paragraph(song.title));
+$('.songs').append(paragraph(song.artist));
+$('.songs').append('mp3-url:<iframe width="560" height="315" src="'+ song["mp3-url"] + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+    var playlist = myPlayList.playlist;
+     $("#colors").append("<h3>" + color + "</h3>");   
+    console.log(color);
+}
 });
 
 function displayList(){
